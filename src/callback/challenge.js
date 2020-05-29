@@ -13,10 +13,11 @@ function fetchData (url_api, callback) {
         return callback(error,null)
       }
     }
-  } 
+  }
   xhttp.send(); //Se envia la solicitud
 }
 
+//Lo ideal es hacer 3 llamados a los callback para evitar los callback hell
 fetchData(API,function(error1, data1) {
   if (error1) return console.error(error1);
   fetchData(API + data1.results[0].id , function (error2, data2) {
@@ -25,7 +26,9 @@ fetchData(API,function(error1, data1) {
       if (error3) return console.error(error3);
       console.log(data1.info.count);
       console.log(data2.name);
-      console.log(date3.dimension);
-    })
-  }) 
+      console.log(data3.dimension);
+    });
+  })
 })
+
+
