@@ -1,6 +1,8 @@
 const fetchData = require('../utils/fetchData');
 let API = 'https://rickandmortyapi.com/api/character/' //Se crea la api a la que le haremos la peticion
 
+//las promesas como este tipo nos dan la ventaja para no tener callback hells
+//desventajas requiere una herramienta extra para que los navegadores lo corran
 fetchData(API)
   .then(data => {
     console.log(data.info.count);
