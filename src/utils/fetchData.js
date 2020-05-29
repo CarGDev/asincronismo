@@ -15,3 +15,5 @@ const fetchData = (url_api, callback) => {
     xhttp.send(); //Se envia la solicitud
   });
 }
+
+module.exports = fetchData;
