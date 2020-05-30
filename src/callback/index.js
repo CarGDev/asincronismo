@@ -12,24 +12,24 @@ console.log(calc(5,2,sum));
 
 /**
  * Suma
- * @date 2020-05-23
+ * @date 2020-05-30
  * @param {Number} num1
  * @param {Number} num2
  * @returns {Number}
  */
-const sum = (num1, num2) => num1 + num2;
+const sum2 = (num1, num2) => num1 + num2;
 
 /**
  * Calcular
- * @date 2020-05-23
+ * @date 2020-05-30
  * @param {Number} num1
  * @param {Number} num2
  * @param {Function} callback
  * @returns {Number}
  */
-const calc = (num1, num2, callback) => callback(num1, num2);
+const calc2 = (num1, num2, callback) => callback(num1, num2);
 
-console.log(calcular(6, 2, suma));
+//console.log(calc2(6, 2, sum2));
 
 function date(callback) {
   console.log(new Date);
