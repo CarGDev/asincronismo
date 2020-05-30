@@ -5,14 +5,17 @@ let API = 'https://rickandmortyapi.com/api/character/' //Se crea la api a la que
 //desventajas requiere una herramienta extra para que los navegadores lo corran
 fetchData(API)
   .then(data => {
-    console.log(data.info.count);
+    const { info: { count }, results } = data;
+    console.log(count);
     return fetchData(`${API}${data.results[0].id}`)
   })
   .then(data => {
-    console.log(data.name);
-    return fetchData(data.origin.url)
+    const { name, origin: { url } } = data;
+    console.log(name)
+    return fetchData(url)
   })
   .then(data => {
-    console.log(data.dimension);
+    const { dimension } = data;
+    console.log(dimension);
   })
   .catch(err => console.error(err));
